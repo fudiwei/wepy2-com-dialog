@@ -13,6 +13,7 @@
     "scripts": {
         "deploy": "npm publish --access=public"
     },
+    "typings": "com-dialog.d.ts",
     "dependencies": {},
     "devDependencies": {}
 }

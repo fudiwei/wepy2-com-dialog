@@ -1,36 +1,30 @@
-export interface ComponentDialog {
+export interface WepyComponentDialog {
     /**
      * 显示提示对话框。
      * @param {String | Object} options
      */
-    alert(
-        options:
-            | string
-            | {
-                  title?: string;
-                  content: string;
-                  confirmText?: string;
-                  confirmTextColor?: string;
-                  textAlign?: string;
-                  success?: (e: { index: number }) => any;
-              }
-    ): void;
+    alert(options: string | WepyComponentDialog.AlertDialogOptions): void;
     
     /**
      * 显示确认对话框。
      * @param {String | Object} options
      */
-    confirm(
-        options:
-            | string
-            | {
-                  title?: string;
-                  content: string;
-                  confirmText?: string;
-                  confirmTextColor?: string;
-                  cancelText?: string;
-                  textAlign?: string;
-                  success?: (e: { index: number }) => any;
-              }
-    ): void;
+    confirm(options: string | WepyComponentDialog.ConfirmDialogOptions): void;
+}
+
+export namespace WepyComponentDialog {
+    export type TextAligns = 'center' | 'left' | 'right';
+
+    export interface AlertDialogOptions {
+        title?: string;
+        content: string;
+        confirmText?: string;
+        confirmTextColor?: string;
+        textAlign?: TextAligns;
+        success?: (e: { index: number }) => void;
+    }
+
+    export interface ConfirmDialogOptions extends AlertDialogOptions {
+        cancelText?: string;
+    }
 }

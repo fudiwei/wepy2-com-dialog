@@ -15,5 +15,7 @@
     },
     "typings": "com-dialog.d.ts",
     "dependencies": {},
-    "devDependencies": {}
+    "devDependencies": {
+        "@wepy/core": "^2.1.0"
+    }
 }

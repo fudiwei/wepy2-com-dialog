@@ -1,4 +1,6 @@
-export interface WepyComponentDialog {
+import { WepyComponent } from "@wepy/core/types/wepy";
+
+export interface WepyComponentDialog extends WepyComponent {
     /**
      * 显示提示对话框。
      * @param {String | Object} options

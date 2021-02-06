@@ -20,7 +20,7 @@ npm install @skit/wepy2-com-dialog --save
 
 ``` html
 <template>
-    <ui-dialog ref="dialog" />
+    <ui-dialog ref="ui-dialog" />
 </template>
 <config>
 {
@@ -34,7 +34,7 @@ npm install @skit/wepy2-com-dialog --save
     
     Wepy.page({
         onShow() {
-            this.$refs['dialog'].alert('hello world');
+            this.$refs['ui-dialog'].alert('hello world');
         }
     });
 </script>
@@ -63,7 +63,7 @@ primaryTextColor | 确认按钮文字颜色<br>（支持 16 进制色或 RGB/RGB
  * @param {String} options.textAlign 提示文本的对齐方式，支持“left”、“center”、“right”，默认值为“center”。
  * @param {Function} options.success 点击按钮后的回调方法。
  */
-this.$refs['dialog'].alert({
+this.$refs['ui-dialog'].alert({
     title: '这是标题',
     content: '这是内容',
     confirmText: '确认',
@@ -78,7 +78,7 @@ this.$refs['dialog'].alert({
  * 显示提示对话框。
  * @param {String} content 提示文本。
  */
-this.$refs['dialog'].alert('这是内容');
+this.$refs['ui-dialog'].alert('这是内容');
 
 /**
  * 显示确认对话框。
@@ -91,7 +91,7 @@ this.$refs['dialog'].alert('这是内容');
  * @param {String} options.textAlign 提示文本的对齐方式，支持“left”、“center”、“right”，默认值为“center”。
  * @param {Function} options.success 点击按钮后的回调方法，该方法将接收一个表示被点击按钮索引的参数。
  */
-this.$refs['dialog'].confirm({
+this.$refs['ui-dialog'].confirm({
     title: '这是标题',
     content: '这是内容',
     confirmText: '确认',
@@ -114,5 +114,5 @@ this.$refs['dialog'].confirm({
  * 显示确认对话框。
  * @param {String} content 提示文本。
  */
-this.$refs['dialog'].confirm('这是内容');
+this.$refs['ui-dialog'].confirm('这是内容');
 ```
